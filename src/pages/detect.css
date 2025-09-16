@@ -1,0 +1,422 @@
+/* src/pages/detect.css */
+.detect-page {
+  padding: 20px 0;
+}
+
+.page-title {
+  text-align: center;
+  color: #2E7D32;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #666666;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detect-content {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.upload-section {
+  flex: 1;
+}
+
+.results-section {
+  flex: 1;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  color: #2E7D32;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* Upload Methods */
+.upload-methods {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.method-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.method-btn.active {
+  border-color: #4CAF50;
+  background-color: #f8fff7;
+  color: #2E7D32;
+}
+
+.method-btn i {
+  margin-right: 8px;
+}
+
+/* File Upload */
+.file-upload {
+  margin-bottom: 20px;
+}
+
+.upload-area {
+  border: 2px dashed #dddddd;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-area:hover {
+  border-color: #4CAF50;
+}
+
+.upload-placeholder {
+  color: #999999;
+}
+
+.upload-placeholder i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.upload-placeholder p {
+  margin: 0 0 5px 0;
+  font-weight: 500;
+}
+
+.upload-placeholder span {
+  font-size: 0.9rem;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+}
+
+/* Camera Upload */
+.camera-upload {
+  margin-bottom: 20px;
+}
+
+.camera-feed {
+  width: 100%;
+  height: 300px;
+  background: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.camera-feed video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-error {
+  text-align: center;
+  padding: 30px;
+  color: #f44336;
+}
+
+.camera-error i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #FF9800;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #F57C00;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+
+.btn-secondary:hover {
+  background-color: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+}
+
+.btn-outline:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading animation */
+.loading-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Recommendation results */
+.results-description {
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.results-header {
+  margin-bottom: 20px;
+}
+
+.disease-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.disease-name h4 {
+  margin: 0;
+  color: #2E7D32;
+  font-size: 1.5rem;
+}
+
+.confidence-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.result-detail {
+  margin-bottom: 20px;
+}
+
+.result-detail h5 {
+  color: #2E7D32;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.result-detail ul {
+  padding-left: 20px;
+}
+
+.result-detail li {
+  margin-bottom: 8px;
+}
+
+.results-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.placeholder-card {
+  text-align: center;
+  padding: 40px 25px;
+}
+
+.placeholder-icon {
+  font-size: 50px;
+  color: #dddddd;
+  margin-bottom: 20px;
+}
+
+.placeholder-card h3 {
+  color: #999999;
+  margin-bottom: 15px;
+}
+
+.placeholder-card p {
+  color: #aaaaaa;
+}
+
+/* Tips Section */
+.tips-section {
+  margin-top: 40px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tip-item {
+  text-align: center;
+  padding: 20px;
+  background: #f8fff7;
+  border-radius: 8px;
+}
+
+.tip-icon {
+  font-size: 30px;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.tip-item h4 {
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+.tip-item p {
+  color: #666666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .detect-content {
+    flex-direction: column;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .upload-methods {
+    flex-direction: column;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .results-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .disease-name {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}

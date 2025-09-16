@@ -1,0 +1,93 @@
+/* Home page styles */
+.home-page .hero {
+  padding: 80px 0 50px;
+  background: linear-gradient(180deg, rgba(76,175,80,0.08), transparent);
+  text-align: center;
+}
+
+.home-page .hero h2 {
+  color: #2E7D32;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.home-page .hero p {
+  color: #555555;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+
+.features {
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2E7D32;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.feature-icon {
+  color: #4CAF50;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.testimonials {
+  padding: 40px 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-author h4 {
+  margin: 10px 0 2px;
+  color: #2E7D32;
+}
+
+.stats {
+  padding: 40px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-item h3 { color: #2E7D32; }
+
+.cta { padding: 50px 0; text-align: center; }
+

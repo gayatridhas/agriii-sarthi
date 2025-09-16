@@ -1,0 +1,203 @@
+.irrigation-page { padding: 20px 0; }
+.page-title { text-align: center; color: #2E7D32; margin-bottom: 8px; }
+.page-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+.irrigation-content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.sensor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+.sensor-item { display: flex; gap: 12px; }
+.sensor-icon { width: 44px; height: 44px; border-radius: 8px; background: #e8f5e9; color: white; display: flex; align-items: center; justify-content: center; }
+.sensor-value { font-weight: 700; }
+.control-section { display: grid; gap: 15px; }
+.schedule-card { background: #f8fff7; border: 1px solid #e0f2e9; padding: 15px; border-radius: 8px; }
+.schedule-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 10px 0; }
+.schedule-item { display: flex; align-items: center; gap: 8px; }
+.manual-control .pump-controls { display: grid; gap: 10px; }
+.pump-item { display: flex; align-items: center; justify-content: space-between; }
+.pump-status { font-weight: 600; }
+.switch { position: relative; display: inline-block; width: 46px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .2s; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .2s; }
+input:checked + .slider { background-color: #4CAF50; }
+input:checked + .slider:before { transform: translateX(22px); }
+.slider.round { border-radius: 24px; }
+.slider.round:before { border-radius: 50%; }
+.water-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.stat-value { font-weight: 700; color: #2E7D32; }
+.stat-change.up { color: #2E7D32; }
+.stat-change.down { color: #f44336; }
+.forecast-list { display: grid; gap: 10px; }
+.forecast-item { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 10px; border: 1px solid #eee; border-radius: 8px; }
+.forecast-day { font-weight: 600; }
+.forecast-temp, .forecast-rain, .forecast-humidity { display: flex; align-items: center; gap: 6px; }
+.tips-list { display: grid; gap: 10px; }
+.tip-item { display: flex; align-items: center; gap: 10px; }
+.tip-icon { width: 34px; height: 34px; border-radius: 50%; background: #e8f5e9; color: #2E7D32; display: flex; align-items: center; justify-content: center; }
+.quick-actions { display: grid; gap: 10px; }
+@media (max-width: 992px) { .irrigation-content { grid-template-columns: 1fr; } }
+/* src/pages/Irrigation.css */
+.irrigation-page {
+  padding: 20px 0;
+}
+
+.page-title {
+  text-align: center;
+  color: #2E7D32;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.irrigation-content {
+  display: flex;
+  gap: 30px;
+}
+
+.main-content {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  color: #2E7D32;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* Sensor Grid */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.sensor-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f8fff7;
+  border-radius: 10px;
+}
+
+.sensor-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.sensor-info h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.sensor-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2E7D32;
+  margin: 0;
+}
+
+.sensor-status {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+}
+
+/* Control Section */
+.control-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.schedule-card {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2196F3;
+}
+
+.schedule-card h4 {
+  margin: 0 0 15px 0;
+  color: #2196F3;
+}
+
+.schedule-details {
+  margin-bottom: 15px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.schedule-item i {
+  color: #2196F3;
+  width: 20px;
+}
+
+/* Manual Control */
+.manual-control {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.manual-control h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
